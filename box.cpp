@@ -15,3 +15,7 @@ void Box::report() {
     cout << "Height: " << height << endl;
 
 }
+
+void Box::setWidth( double inWidth) {
+    width = inWidth;
+}
