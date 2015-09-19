@@ -7,6 +7,7 @@ int main(int argc, char** argv)
   Box box1;
   Box box2;
   Box boxA;
+  Box boxB;
 
   box1.setWidth(15.0);
   cout<<"Hello World!" << endl;
@@ -16,6 +17,8 @@ int main(int argc, char** argv)
   box2.report();
   cout<<"BoxA:" << endl;
   boxA.report();
+  cout<<"BoxB:" << endl;
+  boxB.report();
 
   return 0;
 }
