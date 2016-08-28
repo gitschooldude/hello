@@ -23,5 +23,6 @@ int main(int argc, char** argv)
   cout<<"BoxE:" << endl;
   boxE.report();
 
+  // always return zero
   return 0;
 }
