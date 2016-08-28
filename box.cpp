@@ -6,7 +6,7 @@ using namespace std;
 Box::Box() {
     length = 3;
     width  = 4;
-    height = 5;
+    height = 8;
 }
 
 void Box::report() {
