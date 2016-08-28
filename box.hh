@@ -6,6 +6,6 @@ class Box
       double width;    // width of a box
       double height;   // Height of a box
 
-      void report();
+      void Report();
       void setWidth( double inWidth) ;
 };

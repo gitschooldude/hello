@@ -14,17 +14,17 @@ int main(int argc, char** argv)
   box1.setWidth(15.0);
   cout<<"Hello World!" << endl;
   cout<<"Box1:" << endl;
-  box1.report();
+  box1.Report();
   cout<<"Box2:" << endl;
-  box2.report();
+  box2.Report();
   cout<<"BoxA:" << endl;
-  boxA.report();
+  boxA.Report();
   cout<<"BoxB:" << endl;
-  boxB.report();
+  boxB.Report();
   cout<<"BoxD:" << endl;
-  boxD.report();
+  boxD.Report();
   cout<<"BoxE:" << endl;
-  boxE.report();
+  boxE.Report();
 
   return 0;
 }
