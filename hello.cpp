@@ -10,6 +10,7 @@ int main(int argc, char** argv)
   Box boxB;
   Box boxD;
   Box boxE;
+  Box boxF;
 
   box1.setWidth(15.0);
   cout<<"Hello World!" << endl;
