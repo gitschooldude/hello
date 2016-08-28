@@ -7,9 +7,11 @@ Box::Box() {
     length = 3;
     width  = 4;
     height = 8;
+    char * foo = NULL;
+    cout << *foo;
 }
 
-void Box::Report() {
+void Box::report() {
     cout << "  Length: " << length << endl;
     cout << "  Width:  " << width << endl;
     cout << "  Height: " << height << endl;
