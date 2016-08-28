@@ -12,9 +12,9 @@ Box::Box() {
 }
 
 void Box::report() {
-    cout << "  Length: " << length << endl;
-    cout << "  Width:  " << width << endl;
-    cout << "  Height: " << height << endl;
+    cout << " Length: " << length << endl;
+    cout << " Width:  " << width << endl;
+    cout << " Height: " << height << endl;
 
 }
 
