@@ -1,4 +1,4 @@
 all:
-	g++ -Wall -o hello hello.cpp box.cpp
+	g++ -Wall -O0 -g -o hello hello.cpp box.cpp
 clean:
 	rm -f hello

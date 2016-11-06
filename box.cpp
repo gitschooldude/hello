@@ -8,7 +8,7 @@ Box::Box() {
     width  = 4;
     height = 8;
     char * foo = NULL;
-    cout << *foo;
+//    cout << *foo;
 }
 
 void Box::report() {
