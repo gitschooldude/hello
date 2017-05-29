@@ -24,5 +24,6 @@ int main(int argc, char** argv)
   boxE.report();
 
   // always return zero
+  // comment here
   return 0;
 }
