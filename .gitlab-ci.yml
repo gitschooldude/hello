@@ -8,6 +8,6 @@ Build code:
         - make
         
 Nominal Run:
-    stage Run
+    stage: Run
     script:
         - ./hello
