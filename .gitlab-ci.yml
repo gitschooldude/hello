@@ -1,0 +1,13 @@
+stages:
+    - Build
+    - Run
+
+Build code:
+    stage: Build
+    script:
+        - make
+        
+Nominal Run:
+    stage Run
+    script:
+        - ./hello
