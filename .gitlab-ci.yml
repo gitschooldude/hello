@@ -16,3 +16,9 @@ Nominal Run:
     stage: Run
     script:
         - ./hello
+
+Cmd-line Run:
+    image: registry.gitlab.com/gitschooldude/hello:centos6
+    stage: Run
+    script:
+        - ./hello Dan Gitschooldude
