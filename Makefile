@@ -1,7 +1,7 @@
 .PHONY: all clean build-centos6  run-centos6
 
 all:
-	g++ -Wall -O0 -g -o hello hello.cpp box.cpp
+	g++ -Wall -O0 -g -o hello -I./include src/hello.cpp src/box.cpp
 clean:
 	rm -f hello
 
