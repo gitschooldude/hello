@@ -1,0 +1,3 @@
+[submodule "external/GitPython"]
+	path = external/GitPython
+	url = https://github.com/gitpython-developers/GitPython.git
