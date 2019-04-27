@@ -1,0 +1,22 @@
+File Type                    Description                                      Command to List
+---------------------------------------------------------------------------------------------------------------------
+Tracked files:               Source Code, README's, INPUTS                    git ls-files
+  |                           for your software build/test process
+  |
+  '-------> & Ignored:       Tracked files that match .gitignore rules,       git ls-files --ignored --exclude-standard
+                             usually added via 'git add -f <file>'
+
+Untracked files:             Everything else -- object files, binaries,       git ls-files --others
+  |                           OUTPUTS of your build/tests
+  |
+  '-------> & Ignored:       Untracked files that match .gitignore rules      git ls-files --other --ignored --exclude-standard
+  |
+  '-------> & Not Ignored:   Untracked files not matching .gitignore rules    git ls-files --other --exclude-standard
+
+When would I ever use this?
+   * How many files are in your repo's current branch?
+   * What is the size of all untracked files produced by your build?
+   * Finding a list of committed files that are also ignored as part of a .gitignore rule cleanup.
+   * Learning a new large project and want to understand the build/test process
+   * Bloated repo cleanup effort, purging files that shouldn't be committed at all.
+
