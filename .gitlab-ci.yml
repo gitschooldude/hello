@@ -3,7 +3,7 @@ stages:
     - Run
 
 Build code:
-    image: registry.gitlab.com/gitschooldude/hello:centos6
+    image: registry.gitlab.com/gitschooldude/hello:ubuntu
     stage: Build
     script:
         - make
@@ -12,13 +12,13 @@ Build code:
             - hello
         
 Nominal Run:
-    image: registry.gitlab.com/gitschooldude/hello:centos6
+    image: registry.gitlab.com/gitschooldude/hello:ubuntu
     stage: Run
     script:
         - ./hello
 
 Cmd-line Run:
-    image: registry.gitlab.com/gitschooldude/hello:centos6
+    image: registry.gitlab.com/gitschooldude/hello:ubuntu
     stage: Run
     script:
         - ./hello Dan Gitschooldude
