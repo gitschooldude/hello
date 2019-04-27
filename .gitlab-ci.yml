@@ -3,7 +3,7 @@ stages:
     - Run
 
 Build code:
-    image: ubuntu
+    image: gcc
     stage: Build
     script:
         - make
@@ -12,13 +12,13 @@ Build code:
             - hello
         
 Nominal Run:
-    image: ubuntu
+    image: gcc
     stage: Run
     script:
         - ./hello
 
 Cmd-line Run:
-    image: ubuntu
+    image: gcc
     stage: Run
     script:
         - ./hello Dan Gitschooldude
