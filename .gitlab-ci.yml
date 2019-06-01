@@ -3,6 +3,8 @@ stages:
     - Run
 
 Build code:
+    only:
+      - /^[0-9]+-.*$/
     image: gcc
     stage: Build
     script:
@@ -12,12 +14,16 @@ Build code:
             - hello
         
 Nominal Run:
+    only:
+      - /^[0-9]+-.*$/
     image: gcc
     stage: Run
     script:
         - ./hello
 
 Cmd-line Run:
+    only:
+      - /^[0-9]+-.*$/
     image: gcc
     stage: Run
     script:
