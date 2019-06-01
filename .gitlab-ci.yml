@@ -3,11 +3,6 @@ stages:
     - Run
 
 Build code:
-    only:
-      changes:
-        - Makefile
-        - src/*
-        - include/*
     image: gcc
     stage: Build
     script:
@@ -17,25 +12,13 @@ Build code:
             - hello
         
 Nominal Run:
-    only:
-      changes:
-        - Makefile
-        - src/*
-        - include/*
     image: gcc
     stage: Run
     script:
         - ./hello
 
 Cmd-line Run:
-    only:
-      changes:
-        - Makefile
-        - src/*
-        - include/*
     image: gcc
     stage: Run
     script:
         - ./hello Dan Gitschooldude
-
-
