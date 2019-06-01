@@ -4,8 +4,10 @@ stages:
 
 Build code:
     only:
-      variables:
-        - $CI_COMMIT_MESSAGE =~ /trigger ci/
+      changes:
+        - Makefile
+        - src/*
+        - include/*
     image: gcc
     stage: Build
     script:
@@ -16,8 +18,10 @@ Build code:
         
 Nominal Run:
     only:
-      variables:
-        - $CI_COMMIT_MESSAGE =~ /trigger ci/
+      changes:
+        - Makefile
+        - src/*
+        - include/*
     image: gcc
     stage: Run
     script:
@@ -25,8 +29,10 @@ Nominal Run:
 
 Cmd-line Run:
     only:
-      variables:
-        - $CI_COMMIT_MESSAGE =~ /trigger ci/
+      changes:
+        - Makefile
+        - src/*
+        - include/*
     image: gcc
     stage: Run
     script:
