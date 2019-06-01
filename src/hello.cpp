@@ -38,6 +38,7 @@ int main(int argc, char** argv)
       cout << "User-defined box: " <<  (*it)->name << endl; 
       (*it)->report();
   }
+  cout<<"We're done!" << endl;
 
   // always return zero
   // comment here
