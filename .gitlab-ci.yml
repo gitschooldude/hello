@@ -4,7 +4,8 @@ stages:
 
 Build code:
     only:
-      - /^[0-9]+-.*$/
+      variables:
+        - $CI_COMMIT_MESSAGE =~ /trigger ci/
     image: gcc
     stage: Build
     script:
@@ -15,7 +16,8 @@ Build code:
         
 Nominal Run:
     only:
-      - /^[0-9]+-.*$/
+      variables:
+        - $CI_COMMIT_MESSAGE =~ /trigger ci/
     image: gcc
     stage: Run
     script:
@@ -23,7 +25,8 @@ Nominal Run:
 
 Cmd-line Run:
     only:
-      - /^[0-9]+-.*$/
+      variables:
+        - $CI_COMMIT_MESSAGE =~ /trigger ci/
     image: gcc
     stage: Run
     script:
