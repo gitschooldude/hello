@@ -9,4 +9,5 @@ class Box
 
       void report();
       void setWidth( double inWidth) ;
+      std::string color;   // Color of the box
 };
