@@ -1,3 +1,4 @@
 hello
 *.pdf
 *.o
+output/*.txt

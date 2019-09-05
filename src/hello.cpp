@@ -1,22 +1,25 @@
 #include <iostream> 
 #include "box.hh"
 #include <vector>
+#include <unistd.h>
 
 using namespace std;
 int main(int argc, char** argv)
 {  
-  Box box2;
-  Box boxA;
-  Box boxB;
-  Box boxD;
-  Box boxE;
-  Box boxF;
+  Box box2;box2.name = "box2";
+  Box boxA;boxA.name = "boxA";
+  Box boxB;boxB.name = "boxB";
+  Box boxD;boxD.name = "boxD";
+  Box boxE;boxE.name = "boxE";
+  Box boxF;boxF.name = "boxF";
 
   vector <Box*> user_boxes;
   for (int i = 1; i < argc; ++i) {
       cout << "Creating user-defined box: " <<  argv[i] << endl; 
+      cout << "  Simulating a 10 second \"creation time\"... " <<  endl; 
+      usleep(10e6);
       Box * mybox = new Box();
-      mybox->name = argv[i];
+      mybox->name = std::string(argv[i]);
       user_boxes.push_back(mybox);
   }
 
@@ -36,7 +39,7 @@ int main(int argc, char** argv)
   vector<Box*>::iterator it;
   for(it = user_boxes.begin(); it != user_boxes.end(); it++ ) {
       cout << "User-defined box: " <<  (*it)->name << endl; 
-      (*it)->report();
+      (*it)->report(true);
   }
   cout<<"We're done!" << endl;
 
