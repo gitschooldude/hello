@@ -4,8 +4,8 @@
 using namespace std;
 
 Box::Box() {
-    length = 3;
-    width  = 4;
+    length = 1;
+    width  = 2;
     height = 8;
     color = "green";
 }
