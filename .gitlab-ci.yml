@@ -1,8 +1,11 @@
 stages:
     - Build
     - Run
+    - Verify
 
 Build code:
+    only:
+        - merge_requests
     image: gcc
     stage: Build
     script:
@@ -12,13 +15,42 @@ Build code:
             - hello
         
 Nominal Run:
+    only:
+        - merge_requests
     image: gcc
     stage: Run
     script:
-        - ./hello
+        - ./hello | tee output/nominal.txt
+    artifacts:
+        paths:
+            - output
 
 Cmd-line Run:
+    only:
+        - merge_requests
     image: gcc
     stage: Run
     script:
-        - ./hello Dan Gitschooldude
+        - ./hello a b c d e f g h i j k l m n o p q r s t u v w x y z
+    artifacts:
+        paths:
+            - output
+
+Nominal Width Check:
+    only:
+        - merge_requests
+    stage: Verify
+    script:
+        - "ls output/nominal.txt"  # File must exist
+        - "! grep 'Width:  [^2]' output/nominal.txt" # If any width is not 4, fail
+
+Cmd-line Length Check:
+    only:
+        - merge_requests
+    stage: Verify
+    script:
+        - "ls output/[abcdefghijklmnopqrstuvwxyz].txt"  # Files must exist
+        - "! grep 'Length: [^1]' output/[abcdefghijklmnopqrstuvwxyz].txt" # If any length is not 3, fail
+
+
+
