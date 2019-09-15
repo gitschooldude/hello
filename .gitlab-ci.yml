@@ -42,7 +42,7 @@ Nominal Width Check:
     stage: Verify
     script:
         - "ls output/nominal.txt"  # File must exist
-        - "! grep 'Width:  [^4]' output/nominal.txt" # If any width is not 4, fail
+        - "! grep 'Width:  [^2]' output/nominal.txt" # If any width is not 4, fail
 
 Cmd-line Length Check:
     only:
@@ -50,7 +50,7 @@ Cmd-line Length Check:
     stage: Verify
     script:
         - "ls output/[abcdefghijklmnopqrstuvwxyz].txt"  # Files must exist
-        - "! grep 'Length: [^3]' output/[abcdefghijklmnopqrstuvwxyz].txt" # If any length is not 3, fail
+        - "! grep 'Length: [^1]' output/[abcdefghijklmnopqrstuvwxyz].txt" # If any length is not 3, fail
 
 
 
