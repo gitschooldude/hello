@@ -4,6 +4,8 @@ stages:
     - Verify
 
 Build code:
+    only:
+        - merge_requests
     image: gcc
     stage: Build
     script:
@@ -13,6 +15,8 @@ Build code:
             - hello
         
 Nominal Run:
+    only:
+        - merge_requests
     image: gcc
     stage: Run
     script:
@@ -22,6 +26,8 @@ Nominal Run:
             - output
 
 Cmd-line Run:
+    only:
+        - merge_requests
     image: gcc
     stage: Run
     script:
@@ -31,12 +37,16 @@ Cmd-line Run:
             - output
 
 Nominal Width Check:
+    only:
+        - merge_requests
     stage: Verify
     script:
         - "ls output/nominal.txt"  # File must exist
         - "! grep 'Width:  [^4]' output/nominal.txt" # If any width is not 4, fail
 
 Cmd-line Length Check:
+    only:
+        - merge_requests
     stage: Verify
     script:
         - "ls output/[abcdefghijkl].txt"  # Files must exist
