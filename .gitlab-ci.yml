@@ -49,8 +49,8 @@ Cmd-line Length Check:
         - merge_requests
     stage: Verify
     script:
-        - "ls output/[abcdefghijkl].txt"  # Files must exist
-        - "! grep 'Length: [^3]' output/[abcdefghijkl].txt" # If any length is not 3, fail
+        - "ls output/[abcdefghijklmnopqrstuvwxyz].txt"  # Files must exist
+        - "! grep 'Length: [^3]' output/[abcdefghijklmnopqrstuvwxyz].txt" # If any length is not 3, fail
 
 
 
