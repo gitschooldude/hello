@@ -12,4 +12,8 @@ jobs:
         run: make
       - name: Nominal Run
         run: ./hello
+      - uses: actions/upload-artifact@master
+        with:
+          name: hello-artifact
+          path: hello
 
