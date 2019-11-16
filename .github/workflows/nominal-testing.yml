@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build Code
-        run: pwd && whoami && ls -l && make
+        run: pwd && whoami && ls -l
       - name: Nominal Run
         run: ./hello
 
