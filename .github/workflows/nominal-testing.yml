@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Build Code v2.1
+      - name: Build Code v2.2
         run: make
       - name: Nominal Run
         run: ./hello
