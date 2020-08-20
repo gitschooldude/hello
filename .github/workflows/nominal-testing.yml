@@ -16,4 +16,7 @@ jobs:
         with:
           name: hello-artifact
           path: hello
-
+      - uses: actions/upload-artifact@v2
+        with:
+          name: hello-artifact
+          path: hello
