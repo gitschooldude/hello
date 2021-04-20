@@ -43,6 +43,6 @@ jobs:
     steps:
     env:
       LAST_NAME: ${{ secrets.LAST_NAME }}
-      run: |
-        echo $LAST_NAME.
+    run: |
+      echo $LAST_NAME.
 ##################################################################
