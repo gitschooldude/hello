@@ -1,4 +1,5 @@
-# name: Hello Testing
+##################################################################
+# name: Hello Testing Hello run and generating hello-artifact binary which can be downloaded
 # # This workflow is triggered on pushes to the repository.
 # on: [push]
 
@@ -16,9 +17,24 @@
 #         with:
 #           name: hello-artifact
 #           path: hello
-
 ##################################################################
-name: Greeting from Mona
+# name: Setting and Printing environment variables.
+# on: push
+# jobs:
+#   my-job:
+#     name: My Job
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Print a greeting
+#       env:
+#         MY_VAR: Hi there! My name is
+#         FIRST_NAME: Mona
+#         MIDDLE_NAME: The
+#         LAST_NAME: Octocat
+#       run: |
+#         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+##################################################################
+name: Testing GitHub > Settings > Secrets > variables.
 on: push
 jobs:
   my-job:
@@ -26,11 +42,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print a greeting
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
       run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-
+        echo $LAST_NAME.
+##################################################################
