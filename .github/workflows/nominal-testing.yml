@@ -41,7 +41,8 @@ jobs:
     name: My Job
     runs-on: ubuntu-latest
     steps:
-    - name: Print a greeting
+    env:
+      LAST_NAME: ${{ secrets.LAST_NAME }}
       run: |
         echo $LAST_NAME.
 ##################################################################
