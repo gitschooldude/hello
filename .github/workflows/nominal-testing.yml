@@ -47,5 +47,5 @@ jobs:
     steps:
     - run: |
         echo "Hello ${{ secrets.LAST_NAME }}!"
-        echo $LAST_NAME.
+        echo $LAST_NAME
 ##################################################################
