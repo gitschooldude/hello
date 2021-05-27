@@ -51,13 +51,13 @@ jobs:
         echo "Hello 2nd secret value is   ${{ secrets.SAMPLE_PASSWORD }}!"
         echo $SAMPLE_PASSWORD
 ##################################################################
-name: Displaying GitHub Actions Environment Variables using env command.
-on: push
-jobs:
-  my-job:
-    name: My Job
-    runs-on: ubuntu-latest
-    steps:
-      - name : Run a one-line script
-        run: env
+# name: Displaying GitHub Actions Environment Variables using env command.
+# on: push
+# jobs:
+#   my-job:
+#     name: My Job
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name : Run a one-line script
+#         run: env
 #################################################################
