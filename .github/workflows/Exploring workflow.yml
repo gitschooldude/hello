@@ -38,24 +38,24 @@
 #       run: |
 #         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
 ##################################################################
-# name: Testing GitHub > Settings > Secrets > variables.
-# on: push
-# jobs:
-#   my-job:
-#     name: My Job
-#     runs-on: ubuntu-latest
-#     steps:
-#     - run: |
-#         echo "Hello ${{ secrets.LAST_NAME }}!"
-#         echo $LAST_NAME
-##################################################################
-name: Displaying GitHub Actions Environment Variables using env command.
+name: Displaying secret value from  GitHub > Settings > Secrets > variables.
 on: push
 jobs:
   my-job:
     name: My Job
     runs-on: ubuntu-latest
     steps:
-      - name : Run a one-line script
-        run: env
+    - run: |
+        echo "Hello secret value is   ${{ secrets.LAST_NAME }}!"
+        echo $LAST_NAME
+##################################################################
+# name: Displaying GitHub Actions Environment Variables using env command.
+# on: push
+# jobs:
+#   my-job:
+#     name: My Job
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name : Run a one-line script
+#         run: env
 ##################################################################
