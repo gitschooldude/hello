@@ -73,6 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: docker login
       env:
         SAMPLE_PASSWORD: ${{ secrets.SAMPLE_PASSWORD }}  
       run: |
