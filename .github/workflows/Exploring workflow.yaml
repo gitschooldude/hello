@@ -38,7 +38,7 @@
 #       run: |
 #         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
 ##################################################################
-name: Displaying secret value from  GitHub > Settings > Secrets > variables.
+name: Displaying secret values. But values from GitHub > Settings > Secrets > variables are not displayed.
 on: push
 jobs:
   my-job:
@@ -51,13 +51,13 @@ jobs:
         echo "Hello 2nd secret value is   ${{ secrets.SAMPLE_PASSWORD }}!"
         echo $SAMPLE_PASSWORD
 ##################################################################
-# name: Displaying GitHub Actions Environment Variables using env command.
-# on: push
-# jobs:
-#   my-job:
-#     name: My Job
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name : Run a one-line script
-#         run: env
-##################################################################
+name: Displaying GitHub Actions Environment Variables using env command.
+on: push
+jobs:
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+      - name : Run a one-line script
+        run: env
+#################################################################
