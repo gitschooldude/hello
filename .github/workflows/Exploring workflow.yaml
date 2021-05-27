@@ -38,21 +38,21 @@
 #       run: |
 #         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
 ##################################################################
-name: Displaying secret values. But values from GitHub > Settings > Secrets > variables are not displayed.
-on: push
-jobs:
-  my-job:
-    name: My Job
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
-        echo "Hello 1st secret value is   ${{ secrets.LAST_NAME }} !"
-        echo $LAST_NAME
-        echo "Hello 2nd secret value is   ${{ secrets.SAMPLE_PASSWORD }} !"
-        echo $SAMPLE_PASSWORD
-     env:
-        SAMPLE_PASSWORD: ${{ secrets.SAMPLE_PASSWORD }}  
-        echo $SAMPLE_PASSWORD
+# name: Displaying secret values. But values from GitHub > Settings > Secrets > variables are not displayed.
+# on: push
+# jobs:
+#   my-job:
+#     name: My Job
+#     runs-on: ubuntu-latest
+#     steps:
+#     - run: |
+#         echo "Hello 1st secret value is   ${{ secrets.LAST_NAME }} !"
+#         echo $LAST_NAME
+#         echo "Hello 2nd secret value is   ${{ secrets.SAMPLE_PASSWORD }} !"
+#         echo $SAMPLE_PASSWORD
+#       env:
+#         SAMPLE_PASSWORD: ${{ secrets.SAMPLE_PASSWORD }}  
+#         echo $SAMPLE_PASSWORD
 ##################################################################
 # name: Displaying GitHub Actions Environment Variables using env command.
 # on: push
@@ -64,3 +64,17 @@ jobs:
 #       - name : Run a one-line script
 #         run: env
 #################################################################
+name: Docker Series Builds
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      env:
+        SAMPLE_PASSWORD: ${{ secrets.SAMPLE_PASSWORD }}  
+      run: |
+        echo "Hello 2nd secret value is   ${{ secrets.SAMPLE_PASSWORD }} !"
+        echo $SAMPLE_PASSWORD
