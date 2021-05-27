@@ -46,8 +46,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello secret value is   ${{ secrets.LAST_NAME }}!"
+        echo "Hello 1st secret value is   ${{ secrets.LAST_NAME }}!"
         echo $LAST_NAME
+        echo "Hello 2nd secret value is   ${{ secrets.SAMPLE_PASSWORD }}!"
+        echo $SAMPLE_PASSWORD
 ##################################################################
 # name: Displaying GitHub Actions Environment Variables using env command.
 # on: push
