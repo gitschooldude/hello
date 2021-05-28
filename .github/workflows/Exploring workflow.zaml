@@ -1,21 +1,22 @@
 ##################################################################
-# name: Hello Testing Hello run and generating hello-artifact binary which can be downloaded
-# # This workflow is triggered on pushes to the repository.
-# on: [push]
-# jobs:
-#   build-and-run:
-#     name: Build and Run
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v1
-#       - name: Build Code
-#         run: make
-#       - name: Nominal Run
-#         run: ./hello
-#       - uses: actions/upload-artifact@master
-#         with:
-#           name: hello-artifact
-#           path: hello
+# Testing Hello run and generating hello-artifact binary which can be downloaded
+name: Generating hello-artifact
+# This workflow is triggered on pushes to the repository.
+on: [push]
+jobs:
+  build-and-run:
+    name: Build and Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Code
+        run: make
+      - name: Nominal Run
+        run: ./hello
+      - uses: actions/upload-artifact@master
+        with:
+          name: hello-artifact
+          path: hello
 ##################################################################
 # name: Setting and Printing environment variables.
 # on:
@@ -38,13 +39,4 @@
 #       run: |
 #         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
 ##################################################################
-# name: Displaying GitHub Actions Environment Variables using env command.
-# on: push
-# jobs:
-#   my-job:
-#     name: My Job
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name : Run a one-line script
-#         run: env
-#################################################################
+
