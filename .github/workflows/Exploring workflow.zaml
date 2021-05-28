@@ -38,17 +38,6 @@
 #       run: |
 #         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
 ##################################################################
-name: System displays *** as secret values instead of displaying the exact value.
-on: push
-jobs:
-  my-job:
-    name: My Job
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
-        echo "The value of secret is   ${{ secrets.SAMPLE_PASSWORD }} !"
-        echo $SAMPLE_PASSWORD
-##################################################################
 # name: Displaying GitHub Actions Environment Variables using env command.
 # on: push
 # jobs:
