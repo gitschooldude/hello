@@ -1,0 +1,11 @@
+# Displaying GitHub Actions Environment Variables using env command.
+name: Environment Variables
+ on: push
+ jobs:
+   my-job:
+     name: My Job
+     runs-on: ubuntu-latest
+     steps:
+       - name : Run a one-line script
+         run: env
+#################################################################
