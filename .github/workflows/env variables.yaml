@@ -1,5 +1,5 @@
 # Displaying GitHub Actions Environment Variables using env command.
-name: Environment Variables
+name: Environment Variables.
  on: push
  jobs:
    my-job:
