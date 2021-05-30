@@ -1,12 +1,12 @@
-# Displaying GitHub Actions Environment Variables using env command.
-name: Environment Variables.
+# Depicting usage of Environment Variables like env and GITHUB.
+name: Environment Variables
 on: push
 jobs:
        
   # Job-github-actions-environment-variables-ubuntu:
   #   runs-on: ubuntu-latest
   #   steps:
-  #     - name: List of the GitHub Actions environment variables on Windows
+  #     - name: List of the GitHub Act12:02pmions environment variables on Windows
   #       run: env
                             
   # Job-github-actions-environment-variables-windows:
@@ -25,14 +25,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # - name: "Set environmental variables"
-      #   run: |
-      #     echo "PG_DATA_DIR=$HOME/data" >> $GITHUB_ENV
-      # - name: "Can use environment variables"
-      #   run: |
-      #     echo "Working variable from variable: $PG_DATA_DIR"          
+      - name: "Set environmental variables"
+        run: |
+          echo "PG_DATA_DIR=$HOME/data" >> $GITHUB_ENV
+      - name: "Can use environment variables"
+        run: |
+          echo "Working variable from variable: $PG_DATA_DIR"          
 
-      # Pass the multiline string through an environment variable $GITHUB_ENV
+      # Passing and displaying the multiline string through an environment variable $GITHUB_ENV
       - name: create string
         run: |
           MY_STRING=$(cat << EOF
@@ -41,9 +41,9 @@ jobs:
           third line
           EOF
           )
-          # echo "MY_STRING<<EOF" >> $GITHUB_ENV
-          # echo "$MY_STRING" >> $GITHUB_ENV
-          # echo "EOF" >> $GITHUB_ENV
+          echo "MY_STRING<<EOF" >> $GITHUB_ENV
+          echo "$MY_STRING" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
         id: my_string
       - name: display string
         run: |
