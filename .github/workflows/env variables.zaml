@@ -29,7 +29,7 @@ jobs:
   # Job-github-actions-environment-variables-ubuntu:
   #   runs-on: ubuntu-latest
   #   steps:
-  #     - name: List of the GitHub Act12:02pmions environment variables on Windows
+  #     - name: Windows GitHub Actions environment variables list
   #       run: env
                             
   # Job-github-actions-environment-variables-windows:
