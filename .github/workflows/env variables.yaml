@@ -22,6 +22,7 @@ jobs:
   #       run: env
 
   Job-github-actions-environment-variable-file-GITHUB:
+    runs-on: ubuntu-latest
     steps:
       - name: "Set environmental variables"
         run: |
