@@ -4,7 +4,7 @@ on:
   workflow_dispatch
 
 jobs:
-  Job-github-actions-running-shell-script:
+  Job-github-actions-running-workflow-manually:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
