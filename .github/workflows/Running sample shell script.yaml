@@ -3,7 +3,7 @@ name: Simple shell script
 on: push
 jobs:
        
-  Job-github-actions-running shell script:
+  Job-github-actions-running-shell-script:
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
