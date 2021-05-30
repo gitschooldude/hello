@@ -1,0 +1,11 @@
+# Here's a quick example of how to START GitHub Actions workflow MANUALLY.
+name: START GitHub Actions workflow MANUALLY
+on: 
+  workflow_dispatch
+
+jobs:
+  Job-github-actions-running-shell-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo "STARTED GitHub Actions workflow MANUALLY"
