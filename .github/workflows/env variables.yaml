@@ -27,4 +27,7 @@ jobs:
       - name: "Set environmental variables"
         run: |
           echo "PG_DATA_DIR=$HOME/data" >> $GITHUB_ENV
+      - name: "Can use environment variables"
+        run: |
+          echo "Working variable from variable: $PG_DATA_DIR"
 #################################################################
