@@ -2,11 +2,9 @@
 name: Publish GitHub Actions Artifacts Example
 
 on:
-  push:
-    branches: [ change-to-master-or-main ]
+  [push]
 
-jobs:
-       
+jobs:    
   archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
