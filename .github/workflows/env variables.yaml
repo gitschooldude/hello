@@ -8,7 +8,7 @@ jobs:
   #   steps:
   #     - name: List of the GitHub Actions environment variables on Windows
   #       run: env
-
+                            
   # Job-github-actions-environment-variables-windows:
   #   runs-on: windows-latest
   #   steps:
@@ -41,9 +41,9 @@ jobs:
           third line
           EOF
           )
-          echo "MY_STRING<<EOF" >> $GITHUB_ENV
-          echo "$MY_STRING" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          # echo "MY_STRING<<EOF" >> $GITHUB_ENV
+          # echo "$MY_STRING" >> $GITHUB_ENV
+          # echo "EOF" >> $GITHUB_ENV
         id: my_string
       - name: display string
         run: |
