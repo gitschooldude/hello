@@ -2,7 +2,8 @@
 name: Publish GitHub Actions Artifacts Example
 
 on:
-  [push]
+  push:
+    branches: [ main ]
 
 jobs:    
   archive-build-artifacts:
