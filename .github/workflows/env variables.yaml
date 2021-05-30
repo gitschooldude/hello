@@ -21,13 +21,31 @@ jobs:
   #     - name: MacOs List of GitHub Actions environment variables
   #       run: env
 
-  Job-github-actions-environment-variable-file-GITHUB:
+  Job-github-actions-environment-variable-$GITHUB:
     runs-on: ubuntu-latest
     steps:
-      - name: "Set environmental variables"
+
+      # - name: "Set environmental variables"
+      #   run: |
+      #     echo "PG_DATA_DIR=$HOME/data" >> $GITHUB_ENV
+      # - name: "Can use environment variables"
+      #   run: |
+      #     echo "Working variable from variable: $PG_DATA_DIR"          
+      
+      # Pass the multiline string through an environment variable $GITHUB_ENV
+      - name: create string
         run: |
-          echo "PG_DATA_DIR=$HOME/data" >> $GITHUB_ENV
-      - name: "Can use environment variables"
+          MY_STRING=$(cat << EOF
+          first line
+          second line
+          third line
+          EOF
+          )
+          echo "MY_STRING<<EOF" >> $GITHUB_ENV
+          echo "$MY_STRING" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+        id: my_string
+      - name: display string
         run: |
-          echo "Working variable from variable: $PG_DATA_DIR"
+          echo "The string is: ${{ env.MY_STRING }}"
 #################################################################
