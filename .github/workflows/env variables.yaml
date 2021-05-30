@@ -21,7 +21,7 @@ jobs:
   #     - name: MacOs List of GitHub Actions environment variables
   #       run: env
 
-  Job-github-actions-environment-variable-$GITHUB:
+  Job-github-actions-environment-variable-GITHUB:
     runs-on: ubuntu-latest
     steps:
 
@@ -31,7 +31,7 @@ jobs:
       # - name: "Can use environment variables"
       #   run: |
       #     echo "Working variable from variable: $PG_DATA_DIR"          
-      
+
       # Pass the multiline string through an environment variable $GITHUB_ENV
       - name: create string
         run: |
