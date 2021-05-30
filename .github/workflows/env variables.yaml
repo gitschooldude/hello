@@ -3,21 +3,27 @@ name: Environment Variables.
 on: push
 jobs:
        
-  Job-github-actions-environment-variables-ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-      - name: List of the GitHub Actions environment variables on Windows
-        run: env
+  # Job-github-actions-environment-variables-ubuntu:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: List of the GitHub Actions environment variables on Windows
+  #       run: env
 
-  Job-github-actions-environment-variables-windows:
-    runs-on: windows-latest
-    steps:
-      - name: Ubuntu GitHub Actions environment variables List
-        run: env
+  # Job-github-actions-environment-variables-windows:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - name: Ubuntu GitHub Actions environment variables List
+  #       run: env
 
-  Job-github-actions-environment-variables-macos:
-    runs-on: macos-latest
+  # Job-github-actions-environment-variables-macos:
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: MacOs List of GitHub Actions environment variables
+  #       run: env
+
+  Job-github-actions-environment-variable-file-$GITHUB:
     steps:
-      - name: MacOs List of GitHub Actions environment variables
-        run: env
+      - name: "Set environmental variables"
+        run: |
+          echo "PG_DATA_DIR=$HOME/data" >> $GITHUB_ENV
 #################################################################
