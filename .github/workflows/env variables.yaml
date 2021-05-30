@@ -21,7 +21,7 @@ jobs:
   #     - name: MacOs List of GitHub Actions environment variables
   #       run: env
 
-  Job-github-actions-environment-variable-file-$GITHUB:
+  Job-github-actions-environment-variable-file-GITHUB:
     steps:
       - name: "Set environmental variables"
         run: |
