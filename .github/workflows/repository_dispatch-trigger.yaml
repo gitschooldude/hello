@@ -1,7 +1,8 @@
 # Here's a quick example of how to START GitHub Actions workflow with repository_dispatch.
+# DetaiLS: Refer https://docs.github.com/en/rest/reference/repos#create-a-repository-dispatch-event
 name: START GitHub Actions workflow with repository_dispatch
 on: 
-  repository_dispatch
+  repository_dispatch:
     types: [build]
 
 jobs:
