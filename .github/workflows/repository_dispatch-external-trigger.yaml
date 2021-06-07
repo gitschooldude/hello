@@ -1,7 +1,9 @@
 # Here's a quick example of how to START GitHub Actions workflow with repository_dispatch.
 # DetaiLS: Refer https://docs.github.com/en/rest/reference/repos#create-a-repository-dispatch-event
 # Notes:
-# 1> Open Postman App,  select 'POST':  https://api.github.com/repos/mdfareed2001/Github_Actions_Exploring/dispatches
+# 1> Open Postman App,  select 'POST'  
+#     https://api.github.com/repos/{owner}/{repo}/dispatches   
+#     Example: https://api.github.com/repos/mdfareed2001/Github_Actions_Exploring/dispatches
 # 2> Authorization tab:
 #      Type:  'Basic Auth'  
 #         Username : <Blank>
