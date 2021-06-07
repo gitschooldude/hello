@@ -1,0 +1,33 @@
+# Here's a quick example of how to START GitHub Actions workflow with repository_dispatch.
+# DetaiLS: Refer https://docs.github.com/en/rest/reference/repos#create-a-repository-dispatch-event
+# Notes:
+# 1> Open Postman App,  select 'POST':  https://api.github.com/repos/mdfareed2001/Github_Actions_Exploring/dispatches
+# 2> Authorization tab:
+#      Type:  'Basic Auth'  
+#         Username : <Blank>
+#         Password: [Generate Personal Access Token from GitHub > Settings > Developer Settings  and paste here.]
+# 3> Headers  tab:
+#     Accept:    application/vnd.github.everest-preview+json
+#     Content-Type:   application/json
+# 4> Body tab:  select 'raw'   and 'JSON'  from dropdown.
+#     { 
+#       "event_type": "build"
+#        "client-payload": {
+#           "env": "production"
+#       }
+#     }
+# 5> Send   check response  'Status: 204 No Content'
+# 6> Verify Workflow is triggered under Actions tab in GitHub Actions.
+
+
+name: START GitHub Actions workflow with repository_dispatch
+on: 
+  repository_dispatch:
+    types: [build]
+
+jobs:
+  Job-github-actions-repository_dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Displaying client_paylod env value of Postman API 
+        run: echo "{{ github.event.client_payload.env }}"
