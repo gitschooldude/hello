@@ -11,7 +11,7 @@
 #     Content-Type:   application/json
 # 4> Body tab:  select 'raw'   and 'JSON'  from dropdown.
 #     { 
-#       "event_type": "build"
+#       "event_type": "build",
 #        "client_payload": {
 #           "env": "production"
 #       }
@@ -29,5 +29,5 @@ jobs:
   Job-github-actions-repository_dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Displaying client_paylod env value of Postman API 
+      - name: Displaying client_paylod env value of Postman API using github object.
         run: echo "{{ github.event.client_payload.env }}"
