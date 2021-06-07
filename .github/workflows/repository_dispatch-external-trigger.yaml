@@ -32,4 +32,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Displaying client_paylod env value of Postman API using github object.
-        run: echo {{ github.event.client_payload.env }}
+        run: echo ${{ github.event.client_payload.env }}
