@@ -1,0 +1,13 @@
+# Here's a quick example of how to START GitHub Actions workflow on particular time Schedule CRON.
+#Refer https://crontab.guru   for details
+name: START GitHub Actions workflow for cron schedule expressions
+on: 
+  schedule:
+    - cron: "0/15 * * * *"       #at every 15th minute
+
+jobs:
+  Job-github-actions-running-workflow-manually:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo "STARTED GitHub Actions workflow at schedule from CRON "

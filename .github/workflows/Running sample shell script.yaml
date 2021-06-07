@@ -1,6 +1,6 @@
 # Here's a quick example of how to run a shell script in GitHub Actions.
 name: Simple shell script
-on: push
+on: push    # [ push , pull_request ] 
 jobs:
        
   Job-github-actions-running-shell-script:
