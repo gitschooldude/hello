@@ -12,7 +12,7 @@
 # 4> Body tab:  select 'raw'   and 'JSON'  from dropdown.
 #     { 
 #       "event_type": "build"
-#        "client-payload": {
+#        "client_payload": {
 #           "env": "production"
 #       }
 #     }
