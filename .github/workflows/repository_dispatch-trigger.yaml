@@ -1,0 +1,12 @@
+# Here's a quick example of how to START GitHub Actions workflow with repository_dispatch.
+name: START GitHub Actions workflow with repository_dispatch
+on: 
+  repository_dispatch
+    types: [build]
+
+jobs:
+  Job-github-actions-repository_dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo "STARTED GitHub Actions workflow repository_dispatch"
