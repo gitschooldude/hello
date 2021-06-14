@@ -14,8 +14,10 @@ jobs:
           ls -a 
           git init
           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-          git config --global user.email "md_fareed2001@yahoo.co.in"
-          git config --global user.name "mdfareed2001"
+          #git config --global user.email "md_fareed2001@yahoo.co.in"
+          #git config --global user.name "mdfareed2001"
+          git config --global user.email "my-bot@bot.com"
+          git config --global user.name "my-bot"
           git fetch
           git checkout master
           git branch --set-upstream-to=origin/master
@@ -25,7 +27,7 @@ jobs:
           ls -a 
           git add -A
           git commit -m"Random file"
-          git push origin master
+          #   git push origin master      #getting permissio denied error   if we enable this line
 
           
 #       - name: Create issue using REST API
