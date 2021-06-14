@@ -3,7 +3,7 @@ name: Creating random file on VM job of Github server
 on: push
 
 jobs:
-  create_issue:
+  job-create-random-file-on-VM:
     runs-on: ubuntu-latest 
     permissions:
       issues: write 
@@ -15,7 +15,7 @@ jobs:
           git init
           git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
           git config --global user.email "md_fareed2001@yahoo.co.in"
-          git config --global user.name "Mohammed Fareed"
+          git config --global user.name "mdfareed2001"
           git fetch
           git checkout master
           git branch --set-upstream-to=origin/master
