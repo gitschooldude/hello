@@ -12,9 +12,3 @@ jobs:
         run: |
           node -v
           cat /etc/os-release
-  job-Docker-Official-Maven-image:
-    runs-on: ubuntu-latest
-    container:
-      image: 3.8.1-jdk-11
-    steps:
-      - run: java -version
