@@ -1,0 +1,46 @@
+name: Multi-Container
+
+on: pull_request
+
+jobs:
+  docker-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:10.18.0-jessie
+    steps:
+      - name: log node version
+        run: node -v
+
+      - name: Step with docker
+        uses: docker://node:12.14.1-alpine3.10
+        with: 
+          entrypoint: "/bin/echo"
+          args: "Hello World"
+      - name: Log node version with container
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: /usr/local/bin/node
+          args: -v
+      - uses: actions/checkout@v1
+      - name: Run a script
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: ./github-actions-script1.sh
+          args: "Some string"
+  node-docker:
+    runs-on: ubuntu-latest
+    services:
+        app:
+          image: alialaa17/node-api
+          ports:
+            - 3001:3000
+        mongo:
+          image: mongo
+          ports:
+            - "27017:27017"
+
+    steps:
+      - name: Post a user
+        run: "curl -X POST http://localhost:3001/api/user -H 'Content-Type: application/json' -d '{\"username\": \"Prithvi\", \"address\": \"Pune\"}'"
+      - name: Get Users    
+        run: "curl -X GET http://localhost:3001/api/users"
