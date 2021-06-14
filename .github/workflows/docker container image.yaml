@@ -3,12 +3,18 @@ name: Depicting usage of Docker Container image.
 on: push
 
 jobs:
-  node-docker:
+  job-Docker-Official-NodeJS-Image-with-Alpine-tag:
     runs-on: ubuntu-latest
     container:
       image: node:13.5.0-alpine3.10
     steps:
-      - name: Lode node version
+      - name: node version and other details
         run: |
           node -v
           cat /etc/os-release
+   job-Docker-Official-Maven-image:
+    runs-on: ubuntu-latest
+    container:
+      image: 3.8.1-jdk-11
+    steps:
+      - run: mvn -version
