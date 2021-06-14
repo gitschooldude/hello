@@ -19,6 +19,12 @@ jobs:
           git fetch
           git checkout master
           git branch --set-upstream-to=origin/master
+          git pull
+          ls -a
+          echo $RANDOM >> random.txt
+          ls -a 
+          git add -A
+          git commit -m"Random file"
 
           
 #       - name: Create issue using REST API
