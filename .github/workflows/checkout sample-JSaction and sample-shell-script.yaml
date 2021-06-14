@@ -1,0 +1,27 @@
+##################################################################
+# Here's a quick example of how to run a shell script in GitHub Actions.
+# name: Simple shell script
+# on: push    # [ push , pull_request ] 
+# jobs:      
+#   Job-github-actions-running-shell-script:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Run a one-line script
+#         run: sh ./github-actions-script.sh
+##################################################################
+# Here's a quick example of hello-world-javascript-action.
+name: hello-world-javascript-action
+on: push 
+jobs:     
+  Job-hello-world-javascript-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Prithvi
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
+##################################################################
