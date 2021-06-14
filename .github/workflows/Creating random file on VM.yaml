@@ -17,15 +17,9 @@ jobs:
           git config --global user.email "md_fareed2001@yahoo.co.in"
           git config --global user.name "mdfareed2001"
           git fetch
-          git checkout -b branch1
-          git branch --set-upstream-to=origin/branch1
-          git pull
-          ls -a
-          echo $RANDOM >> random.txt
-          ls -a 
-          git add -A
-          git commit -m"Random file"
-          git push
+          git checkout main
+          git branch --set-upstream-to=origin/main
+
           
 #       - name: Create issue using REST API
 #         run: |
