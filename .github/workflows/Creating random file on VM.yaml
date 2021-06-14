@@ -24,7 +24,7 @@ jobs:
           git branch 
           git add -A
           git commit -m"Random file"
-          #   git push origin master      #getting permission denied error   if we enable this line
+          git push      #getting permission denied error   if we enable this line
           
       # - name: Create issue using REST API
       #   run: |
