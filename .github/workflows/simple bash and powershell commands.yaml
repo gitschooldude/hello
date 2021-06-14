@@ -19,7 +19,7 @@ jobs:
         shell: python
   job-run-windows-commands:
     runs-on: windows-latest
-    needs: [run-shell-command]  # add this when you want to run this job after completion of other job specified in bracket. 
+    needs: [job-run-shell-command]  # add this when you want to run this job after completion of other job specified in bracket. 
     steps:
       - name: Directory Powershell
         run: Get-Location
