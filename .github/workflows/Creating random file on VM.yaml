@@ -17,7 +17,7 @@ jobs:
           git config --global user.email "md_fareed2001@yahoo.co.in"
           git config --global user.name "mdfareed2001"
           git fetch
-          git checkout branch1
+          git checkout -b branch1
           git branch --set-upstream-to=origin/branch1
           git pull
           ls -a
