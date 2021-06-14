@@ -17,4 +17,4 @@ jobs:
     container:
       image: 3.8.1-jdk-11
     steps:
-      - run: mvn -version
+      - run: java -version
