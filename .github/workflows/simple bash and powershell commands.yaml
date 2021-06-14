@@ -1,0 +1,28 @@
+name: Shell Commands
+
+on: [push, pull_request]
+
+jobs:
+  job-run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: one line script
+        run: echo "Hello World"
+      - name: multiline script
+        run: |
+          node -v
+          npm -v
+      - name: python Commands
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+  job-run-windows-commands:
+    runs-on: windows-latest
+    needs: [run-shell-command]  # add this when you want to run this job after completion of other job specified in bracket. 
+    steps:
+      - name: Directory Powershell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash

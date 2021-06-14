@@ -22,6 +22,7 @@
 ##################################################################
 
 # Depicting usage of Environment Variables like env and GITHUB.
+# Note: Add   needs: [jobName]  below any xyz job, when you want to run xyz job after completion of job specified in bracket.
 # name: Environment Variables
 # on: push
 # jobs:
