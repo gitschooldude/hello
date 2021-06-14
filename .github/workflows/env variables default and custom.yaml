@@ -1,38 +1,38 @@
 ##################################################################
-name: Setting and Printing environment variables.
-on:
-  pull_request:
-  push:
-    branches: 
-      - master
-      - develop      
-jobs:
-  job-logging-custom-environment-variables:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print a greeting
-        env:
-          MY_VAR: Hi there! My name is
-          FIRST_NAME: Mona
-          MIDDLE_NAME: The
-          LAST_NAME: Octocat
-        run: |
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-  job-logging-default-environment-variables:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Default ENV Variables
-        run: |
-          echo "HOME: ${HOME}"
-          echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
-          echo "GITHUB_ACTION: ${GITHUB_ACTION}"
-          echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
-          echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
-          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-          echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
-          echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
-          echo "GITHUB_SHA: ${GITHUB_SHA}"
-          echo "GITHUB_REF: ${GITHUB_REF}"
+# name: Setting and Printing custom and default environment variables.
+# on:
+#   pull_request:
+#   push:
+#     branches: 
+#       - master
+#       - develop      
+# jobs:
+#   job-logging-custom-environment-variables:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Print a greeting
+#         env:
+#           MY_VAR: Hi there! My name is
+#           FIRST_NAME: Mona
+#           MIDDLE_NAME: The
+#           LAST_NAME: Octocat
+#         run: |
+#           echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+#   job-logging-default-environment-variables:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Default ENV Variables
+#         run: |
+#           echo "HOME: ${HOME}"
+#           echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
+#           echo "GITHUB_ACTION: ${GITHUB_ACTION}"
+#           echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
+#           echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
+#           echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+#           echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
+#           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+#           echo "GITHUB_SHA: ${GITHUB_SHA}"
+#           echo "GITHUB_REF: ${GITHUB_REF}"
 ##################################################################
 # Depicting usage of Environment Variables like env and GITHUB.
 # Note: Add   needs: [jobName]  below any xyz job, when you want to run xyz job after completion of job specified in bracket.
@@ -89,9 +89,37 @@ jobs:
 # name: CI use of github.ref environment variable.
 # on: push
 # jobs:
-  prod-check:
-    if: ${{ github.ref == 'refs/heads/master' }}
+  # prod-check:
+  #   if: ${{ github.ref == 'refs/heads/master' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo "Deploying to production server on branch $GITHUB_REF"
+#################################################################
+name: Logging custom ENV Variables at workflow, job and step levels
+
+on: push
+
+env: 
+  WF_ENV: Available to all jobs
+  WF_SECRET_ENV: ${{ secrets.WF_SECRET_ENV }}
+
+jobs:   
+  log-env:
     runs-on: ubuntu-latest
+    env:
+      JOB_ENV: Available to all steps in log-env job
     steps:
-      - run: echo "Deploying to production server on branch $GITHUB_REF"
+      - name: step1 Log ENV Variables
+        env:
+          STEP_ENV: Available only to this step
+        run: |
+          echo "WF_ENV: $WF_ENV"
+          echo "JOB_ENV: $JOB_ENV"
+          echo "STEP_ENV: $STEP_ENV"
+          echo "WF_SECRET_ENV: $WF_SECRET_ENV"
+      - name: step2 Log ENV Variables
+        run: |
+          echo "WF_ENV: $WF_ENV"
+          echo "JOB_ENV: $JOB_ENV"
+          echo "STEP_ENV: $STEP_ENV"
 #################################################################
