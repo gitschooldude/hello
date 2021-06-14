@@ -5,26 +5,26 @@ on: push
 jobs:
   job-create-random-file-on-VM:
     runs-on: ubuntu-latest 
-    permissions:
-      issues: write 
+    # permissions:
+    #   issues: write 
     steps:
       - name: Push a random file
         run: |
-          # git init
-          # git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-          # git config --global user.email "md_fareed2001@yahoo.co.in"
-          # git config --global user.name "mdfareed2001"
-          # git fetch
-          # git checkout master
-          # git branch --set-upstream-to=origin/master
-          # git pull
-          # echo $RANDOM >> random.txt
-          # ls -a
-          # git remote -v
-          # git branch 
-          # git add -A
-          # git commit -m"Random file"
-          # #git push      #getting error   if we enable this line
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "md_fareed2001@yahoo.co.in"
+          git config --global user.name "mdfareed2001"
+          git fetch
+          git checkout master
+          git branch --set-upstream-to=origin/master
+          git pull
+          echo $RANDOM >> random.txt
+          ls -a
+          git remote -v
+          git branch 
+          git add -A
+          git commit -m"Random file"
+          git push      #getting error   if we enable this line
           
       # - name: Create issue using REST API
       #   run: |
