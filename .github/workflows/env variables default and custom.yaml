@@ -1,26 +1,43 @@
 ##################################################################
-# name: Setting and Printing environment variables.
-# on:
-#   pull_request:
-#   push:
-#     branches: 
-#       - master
-#       - develop
-# jobs:
-#   my-job:
-#     name: My Job
-#     runs-on: ubuntu-latest
-#     steps:
-#     - name: Print a greeting
-#       env:
-#         MY_VAR: Hi there! My name is
-#         FIRST_NAME: Mona
-#         MIDDLE_NAME: The
-#         LAST_NAME: Octocat
-#       run: |
-#         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+name: Setting and Printing environment variables.
+on:
+  pull_request:
+  push:
+    branches: 
+      - master
+      - develop
+jobs:
+  job-logging-custom-environment-variables:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting
+        env:
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
+        run: |
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+  job-logging-default-environment-variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Default ENV Variables
+        run: |
+          echo "HOME: ${HOME}"
+          echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
+          echo "GITHUB_ACTION: ${GITHUB_ACTION}"
+          echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
+          echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
+          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+          echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
+          echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+          echo "GITHUB_SHA: ${GITHUB_SHA}"
+          echo "GITHUB_REF: ${GITHUB_REF}"
+          echo "WF_ENV: $WF_ENV"
+          echo "JOB_ENV: $JOB_ENV"
+          echo "STEP_ENV: $STEP_ENV"
 ##################################################################
-
 # Depicting usage of Environment Variables like env and GITHUB.
 # Note: Add   needs: [jobName]  below any xyz job, when you want to run xyz job after completion of job specified in bracket.
 # name: Environment Variables
@@ -73,11 +90,12 @@
   #       run: |
   #         echo "The string is: ${{ env.MY_STRING }}"
 #################################################################
-name: CI use of github.ref environment variable.
-on: push
-jobs:
+# name: CI use of github.ref environment variable.
+# on: push
+# jobs:
   prod-check:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
+#################################################################
