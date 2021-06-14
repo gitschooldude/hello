@@ -18,25 +18,23 @@ jobs:
           git pull
           echo $RANDOM >> randomNumber.txt
           ls -a
-          git remote -v
-          git branch 
           git add -A
           git commit -m"Random number file"
           git push    
 
-  job-create-github-issue:
-    runs-on: ubuntu-latest 
-    permissions:
-      issues: write         
-    steps:     
-      - name: Create issue using REST API
-        run: |
-          curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/issues \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "title": "Automated issue for commit: ${{ github.sha }}",
-            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
-            }' \
-          --fail
+  # job-create-github-issue:
+  #   runs-on: ubuntu-latest 
+  #   permissions:
+  #     issues: write         
+  #   steps:     
+  #     - name: Create issue using REST API
+  #       run: |
+  #         curl --request POST \
+  #         --url https://api.github.com/repos/${{ github.repository }}/issues \
+  #         --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+  #         --header 'content-type: application/json' \
+  #         --data '{
+  #           "title": "Automated issue for commit: ${{ github.sha }}",
+  #           "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
+  #           }' \
+  #         --fail
