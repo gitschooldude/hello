@@ -17,8 +17,8 @@ jobs:
           git config --global user.email "md_fareed2001@yahoo.co.in"
           git config --global user.name "mdfareed2001"
           git fetch
-          git checkout main
-          git branch --set-upstream-to=origin/main
+          git checkout master
+          git branch --set-upstream-to=origin/master
 
           
 #       - name: Create issue using REST API
