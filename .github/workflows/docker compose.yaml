@@ -8,30 +8,30 @@ jobs:
     container:
       image: node:10.18.0-jessie
     steps:
-      - name: Step with docker
-        uses: docker://node:12.14.1-alpine3.10
-        with: 
-          entrypoint: "/bin/echo"
-          args: "Hello World"
-      - name: Log node version with container
-        uses: docker://node:12.14.1-alpine3.10
-        with:
-          entrypoint: /usr/local/bin/node
-          args: -v
-      - uses: actions/checkout@v2
+      # - name: Step with docker
+      #   uses: docker://node:12.14.1-alpine3.10
+      #   with: 
+      #     entrypoint: "/bin/echo"
+      #     args: "Hello World"
+      # - name: Log node version with container
+      #   uses: docker://node:12.14.1-alpine3.10
+      #   with:
+      #     entrypoint: /usr/local/bin/node
+      #     args: -v
+      # - uses: actions/checkout@v2
       - name: Run a script
         uses: docker://node:12.14.1-alpine3.10
         with:
-          entrypoint: sh ./script.sh
+          entrypoint: ./script.sh
           args: "Some string"
-  # node-docker:
+  # job-docker-compose:
   #   runs-on: ubuntu-latest
   #   services:
-  #       app:
+  #       app-container1:
   #         image: alialaa17/node-api
   #         ports:
   #           - 3001:3000
-  #       mongo:
+  #       mongo-container2:
   #         image: mongo
   #         ports:
   #           - "27017:27017"
