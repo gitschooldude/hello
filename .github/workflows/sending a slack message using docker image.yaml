@@ -1,8 +1,8 @@
 # sending a slack message from GitHub personal repository to a channel of Slack using Docker image technosophos/slack-notify
 # Example: general channel of app.slack.com. Follow below steps:
-# Go to api.slack.com  > Create a Custom App > Create an App from scratch > Once app is created > activate incoming webhook
-# > Add new webhook to workspace > select channel > copy webhook URL and paste in SLACK_WEBHOOK secret token. 
-# Example: https://hooks.slack.com/services/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
+# Go to api.slack.com  > Create a Custom App > Create an App from scratch > Once app is created > 
+# > Got to Incoming webhooks > Turn ON "Activate Incoming Webhooks" > Add new webhook to workspace
+# > select channel like general and Allow > copy webhook URL and paste in SLACK_WEBHOOK secret token. 
 
 name: sending a slack message from GitHub   
 on: push
@@ -10,8 +10,6 @@ on: push
 jobs:
   job-slack-message:
     runs-on: ubuntu-latest
-    container:
-      image: node:10.18.0-jessie
     steps:
       - name: send a slack message
         uses: docker://technosophos/slack-notify
