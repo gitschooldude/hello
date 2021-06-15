@@ -1,6 +1,6 @@
 name: Multi-Container
 
-on: push
+on: [ push , pull_request ]
 
 jobs:
   # job-docker-steps:

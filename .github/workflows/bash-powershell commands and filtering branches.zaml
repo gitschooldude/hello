@@ -1,6 +1,17 @@
 name: Shell Commands
 
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+      - master
+      - "feature/*"    # matches feature/featA, feature/featB, doesn't match feature/feat/a
+      - "feature/**"
+      - "!feature/featC"
+    tags:
+      - v1.*
+    paths:
+      - "**.js"
+      - "!filename.js"
 
 jobs:
   job-run-shell-command:
