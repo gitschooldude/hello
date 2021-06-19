@@ -20,6 +20,8 @@
 #     }
 # 5> 'Send'   To verify sent, check response 'Status: 204 No Content'
 # 6> Verify Workflow is triggered under Actions tab in GitHub Actions.
+# Note:  We can use Curl as an alternative to Postman. To convert Postman APIs to any other Code snippets like cURL,
+#      Just select Code </> button  in Postman. 
 
 
 name: START GitHub Actions workflow with repository_dispatch
