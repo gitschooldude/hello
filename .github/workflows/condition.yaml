@@ -1,0 +1,25 @@
+name: Condition
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  job-pull-request-condition:
+    name: Run only if there is pull request. 
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull request
+        run: echo I am in pull request! 
+    
+  job-master:
+    name: Run if master
+    if: github.event.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo I am in master! 
+            
